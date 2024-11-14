@@ -15,14 +15,12 @@ class myproject1Service extends LCAPApplicationService {
             return next();
         });
 
-        this.on('CREATE', 'TempData', async (request, next) => {
-            await tempdata_Create_Logic(request);
-            return next();
+        this.after('CREATE', 'TempData', async (results, request) => {
+            await tempdata_Create_Logic(results, request);
         });
 
-        this.on('READ', 'TempData', async (request, next) => {
-            await tempdata_Read_Logic(request);
-            return next();
+        this.after('READ', 'TempData', async (results, request) => {
+            await tempdata_Read_Logic(results, request);
         });
 
         return super.init();
