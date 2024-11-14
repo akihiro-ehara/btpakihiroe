@@ -6,5 +6,5 @@
 const { v4: uuidv4 } = require('uuid'); // UUIDを生成するためにuuidライブラリを使用
 
 module.exports = async function(request) {
-	request.data =  { ID: uuidv4(), Message: "hello create world!!"};;
+	request.reply({ ID: uuidv4(), Message: "hello read world!!"});
 }
