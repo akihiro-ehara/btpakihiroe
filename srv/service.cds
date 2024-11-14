@@ -18,12 +18,6 @@ service myproject1Service
     entity Work as
         projection on my.Work;
 
-    action Action1
-    (
-        arg1 : String(100)
-    )
-    returns String;
-
     entity TempData as
         projection on my.TempData;
 }
