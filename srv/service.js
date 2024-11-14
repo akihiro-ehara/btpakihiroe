@@ -3,18 +3,26 @@
  * @version(2.0)
  */
 const LCAPApplicationService = require('@sap/low-code-event-handler');
-const action1_Logic = require('./code/action1-logic');
-const tempdata_Logic = require('./code/tempdata-logic');
-const { v4: uuidv4 } = require('uuid'); // UUIDを生成するためにuuidライブラリを使用
+const work_Logic = require('./code/work-logic');
+const tempdata_Create_Logic = require('./code/tempdata-create-logic');
+const tempdata_Read_Logic = require('./code/tempdata-read-logic');
+
 class myproject1Service extends LCAPApplicationService {
     async init() {
 
-        this.on('READ', 'TempData', async () => {
-            return [{ ID: uuidv4(), Message: 'Test...' }];
+        this.on(['CREATE', 'READ'], 'Work', async (request, next) => {
+            await work_Logic(request);
+            return next();
         });
 
-        this.on('CREATE', 'TempData', async () => {
-            return [{ ID: uuidv4(), Message: 'Test...' }];
+        this.on('CREATE', 'TempData', async (request, next) => {
+            await tempdata_Create_Logic(request);
+            return next();
+        });
+
+        this.on('READ', 'TempData', async (request, next) => {
+            await tempdata_Read_Logic(request);
+            return next();
         });
 
         return super.init();
