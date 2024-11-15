@@ -1,7 +1,21 @@
 {
-  "scopes": [],
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.SampleRole",
+      "description": "SampleRole"
+    }
+  ],
   "attributes": [],
-  "role-templates": [],
+  "role-templates": [
+    {
+      "name": "SampleRole",
+      "description": "",
+      "scope-references": [
+        "$XSAPPNAME.SampleRole"
+      ],
+      "attribute-references": []
+    }
+  ],
   "xsappname": "myproject1",
   "tenant-mode": "dedicated"
 }

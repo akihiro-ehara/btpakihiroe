@@ -152,7 +152,11 @@ resources:
           redirect-uris:
             - https://*.${default-domain}/login/*
         xsappname: myproject1-${space}
-        role-collections: []
+        role-collections:
+          - description: ''
+            name: myproject1-SampleRole-${space}
+            role-template-references:
+              - $XSAPPNAME.SampleRole
   - type: org.cloudfoundry.managed-service
     name: myproject1-service-db
     parameters:

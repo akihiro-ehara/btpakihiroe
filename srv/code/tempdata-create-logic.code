@@ -2,11 +2,11 @@
     "version": "2.0",
     "codes": [],
     "configuration": {
-        "phase": "after",
+        "phase": "on",
         "events": [
             "CREATE"
         ],
         "entity": "myproject1Service.TempData"
     },
-    "hash": "474494ff3e9ba5acc610b0c302e2fa15230325effed231db31d227f2bdd20b82d13e1036d1e455a427ba12236b380dd092d49d95da4769d6a43d297e5148454c"
+    "hash": "90a6286426600baccb20d876303b56d587d32ba0b52d81c5568d35bf620ff9c501aa060864224e854e20f82981d6e1886b66fc5cb72feef1f448be67316339ab"
 }
